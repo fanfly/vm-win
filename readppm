@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ -e $1 ]; then 
+    od -An -tu1 -w3 -v -j16 $1 | \
+        head -n $2 | tail -n 1 | \
+        (read r g b; echo $r $g $b)
+fi
